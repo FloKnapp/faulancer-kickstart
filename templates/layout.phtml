@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title><?= $this->renderBlock('title', 'Default title') ?></title>
+
+    <?php
+    // Render css assets
+    //
+    // Special feature: Add 'true' as a second parameter to render all given css
+    // assets concatenated inline within a style tag (Google Pagespeed likes it a lot)
+    //
+    // Note: This works only on production
+    // (For testing purposes you can set your environment to 'production'
+    //
+    echo $this->assetList('css');
+    ?>
+</head>
+<body>
+
+    <section>
+        <article>
+            <?= $this->renderBlock('content') ?>
+        </article>
+    </section>
+
+    <?php
+
+    // Render a subview
+    echo $this->renderView('/elements/footer.phtml');
+
+    // Render js assets (at the end of the body of course)
+    echo $this->assetList('js');
+
+    ?>
+
+</body>
+</html>

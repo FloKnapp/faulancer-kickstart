@@ -1,0 +1,21 @@
+{
+    "name": "floknapp/faulancer-kickstart",
+    "description": "Default directory structure and basic configuration to kickstart your project with the faulancer framework",
+    "type": "project",
+    "require": {
+        "floknapp/faulancer": "dev-master"
+    },
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "Flo Knapp",
+            "email": "office@florianknapp.de"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}

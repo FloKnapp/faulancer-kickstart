@@ -1,0 +1,9 @@
+<?php
+/**
+ * Rename this file to 'environment.conf.php' and set your environment
+ * Possible values are 'production', 'staging', 'development'
+ */
+
+if (!defined('APPLICATION_ENV')) {
+    define('APPLICATION_ENV', 'development');
+}

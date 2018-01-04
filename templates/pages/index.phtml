@@ -1,0 +1,16 @@
+<?php $this->parentTemplate('/layout.phtml'); ?>
+
+<?php $this->block('title'); ?>
+    Customize page title directly from this template
+<?php $this->endBlock('title'); ?>
+
+<?php $this->block('content'); ?>
+
+    The content
+
+    Access injected variables with '$variable' (without quotes)
+
+    Subviews can also be rendered from here with:
+    <?= $this->renderView('/elements/list.phtml') ?>
+
+<?php $this->endBlock('content'); ?>
