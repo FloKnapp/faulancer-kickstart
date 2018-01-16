@@ -4,9 +4,9 @@ namespace App\Controller;
 
 use App\Entity\ArticleEntity;
 use Faulancer\Controller\AbstractController;
+use Faulancer\Exception\DbException;
+use Faulancer\Exception\ServiceNotFoundException;
 use Faulancer\Http\Response;
-use ORM\Exception\IncompletePrimaryKey;
-use ORM\Exception\NoEntity;
 
 /**
  * Class WebsiteController
@@ -32,15 +32,15 @@ class WebsiteController extends AbstractController
      *
      * @return Response
      *
-     * @throws IncompletePrimaryKey
-     * @throws NoEntity
+     * @throws DbException
+     * @throws ServiceNotFoundException
      */
     public function articleAction(int $articleId)
     {
-        // This is a shorthand if you have the primary key by the tflori/orm package
+        // This is a shorthand if you have the primary key
         $article = $this->getDb()->fetch(ArticleEntity::class, $articleId);
 
-        // You could write it this way too (for where clauses by string)
+        // You could write it this way too (for where clauses by value)
         // $this->getDb()->fetch(ArticleEntity::class)->where('id', '=', $articleTitle);
 
         return $this->render('/pages/article.phtml', [
