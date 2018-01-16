@@ -37,7 +37,7 @@ class WebsiteController extends AbstractController
      */
     public function articleAction(int $articleId)
     {
-        // This is a shorthand if you have the primary key by the tflor/orm package
+        // This is a shorthand if you have the primary key by the tflori/orm package
         $article = $this->getDb()->fetch(ArticleEntity::class, $articleId);
 
         // You could write it this way too (for where clauses by string)
@@ -48,7 +48,10 @@ class WebsiteController extends AbstractController
         ]);
     }
 
-    protected function addDefaultAssets()
+    /**
+     * Add default assets which gets included in every action
+     */
+    protected function addAssets()
     {
         $this->getView()->addStylesheet('/css/main.css');
     }

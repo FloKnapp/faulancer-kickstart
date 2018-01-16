@@ -12,6 +12,12 @@
             "email": "office@florianknapp.de"
         }
     ],
+    "repositories" : [
+        {
+            "type": "path",
+            "url": "../faulancer"
+        }
+    ],
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
